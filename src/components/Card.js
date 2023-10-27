@@ -77,7 +77,9 @@ const Card = () => {
 
 
     return (
-        <div className="mx-auto mt-3 grid md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 mb-4">
+
+        {...products.length !== 0 ? (
+            <div className="mx-auto mt-3 grid md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 mb-4">
             {products.map((product, i) => {
                 return (
 
@@ -135,6 +137,12 @@ const Card = () => {
                 </DynamicPopup>
             )}
         </div>
+        ):(
+            <div className="text-center m-6 border-2 ">
+              <h1 className="sm:text-sm md:text-xl">  Product list is empty please add new product !!!</h1>
+            </div>
+        )}
+        
     )
 }
 

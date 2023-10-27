@@ -32,7 +32,7 @@ function App() {
     <div className="container">
       <div className="md:mx-5 lg:mx-20 xl:mx-40">
         
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mt-5 mb-5 text-center">ALL PRODUCTS</h1>
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mt-5 mb-5 text-center">PRODUCTS LIST</h1>
         
         <div className="text-center"> 
         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mb-4" onClick={addProduct}>
