@@ -11,31 +11,27 @@ const Card = () => {
     const { cart } = useSelector(state => state.cart);
     const dispatch = useDispatch();
     const [openPopup, setOpenPopup] = useState(false);
-    const [lableQuantity,setLableQuantity] = useState(0)
-
+   
 
     const increaseQuantity = (product) => {
 
         let count = product.quantity + 1;
         dispatch(updateQuantity({ id: product.id, quantity: count }))
-        setLableQuantity(lableQuantity + 1)
-
+        
     }
 
     const decreaseQuantity = (product) => {
-        if(lableQuantity !== 0){
+        
         if (product.quantity !== 0) {
             let count = product.quantity - 1;
             dispatch(updateQuantity({ id: product.id, quantity: count }))
-            if(lableQuantity !== 0){
-            setLableQuantity(lableQuantity - 1)
-            }
+            
         }
-    }
+    
     }
 
     const addToCart = (product) => {
-        if(lableQuantity !== 0){
+       
         if (product.quantity !== 0) {
             const checkcart = cart.filter((pro) => {
                 if (pro.id === product.id) {
@@ -69,9 +65,9 @@ const Card = () => {
             }
           
             setOpenPopup(true)
-            setLableQuantity(0)
+            
         }
-    }
+   
 
     }
 
@@ -101,7 +97,7 @@ const Card = () => {
 
                         <div className='flex justify-center gap-3 mt-1'>
                             <button className='w-5 bg-black text-white' onClick={() => increaseQuantity(product)}>+</button>
-                            <div className='w-5 text-center'>{lableQuantity}</div>
+                            <div className='w-5 text-center'>{product.quantity}</div>
                             <button className='w-5 bg-black text-white' onClick={() => decreaseQuantity(product)}>-</button>
                         </div>
 
